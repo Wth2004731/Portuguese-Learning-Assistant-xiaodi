@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>葡语音频学习助手</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>小迪👧贝贝de专属葡语音频学习助手</h1>
+      <p>请选择音频文件，然后直接上传并分析。</p>
+      <input type="file" id="audioFile" accept=".mp3,.wav,.m4a,.mp4" />
+      <button onclick="uploadAudio()">上传并分析</button>
+
+      <div id="result"></div>
+      <button id="exportBtn" style="display: none">导出 Word</button>
+    </div>
+
+    <script src="/static/main.js"></script>
+  </body>
+</html>
