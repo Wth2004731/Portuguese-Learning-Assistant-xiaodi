@@ -7,14 +7,113 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>小迪👧贝贝de专属葡语音频学习助手</h1>
-      <p>请选择音频文件，然后直接上传并分析。</p>
-      <input type="file" id="audioFile" accept=".mp3,.wav,.m4a,.mp4" />
-      <button onclick="uploadAudio()">上传并分析</button>
+    <div class="app-shell">
+      <div class="bg-glow bg-glow-1"></div>
+      <div class="bg-glow bg-glow-2"></div>
 
-      <div id="result"></div>
-      <button id="exportBtn" style="display: none">导出 Word</button>
+      <main class="container">
+        <section class="hero-card">
+          <div class="topbar">
+            <div class="brand-wrap">
+              <div class="brand-icon">🎙️</div>
+              <div class="brand-texts">
+                <div class="brand-title">Portuguese Learning Assistant</div>
+                <div class="brand-subtitle">
+                  Audio · Transcription · Translation · Export
+                </div>
+              </div>
+            </div>
+            <div class="status-badges">
+              <span class="status-pill">手机适配</span>
+              <span class="status-pill">云端可访问</span>
+            </div>
+          </div>
+          <div class="hero-badge">Portuguese Audio Study</div>
+          <h1>小迪👧贝贝的专属葡语音频学习助手</h1>
+          <p class="hero-desc">
+            上传葡语音频，自动完成葡语转写、中文翻译，并支持导出 Word。
+          </p>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">📝</div>
+              <div>
+                <div class="feature-title">自动转写</div>
+                <div class="feature-text">将葡语音频快速识别为文本内容</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🌐</div>
+              <div>
+                <div class="feature-title">中文翻译</div>
+                <div class="feature-text">自动输出清晰自然的中文结果</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📘</div>
+              <div>
+                <div class="feature-title">学习型分析</div>
+                <div class="feature-text">支持逐句解释与语法点展示</div>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📄</div>
+              <div>
+                <div class="feature-title">一键导出</div>
+                <div class="feature-text">分析完成后可直接导出 Word 文档</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-card upload-card">
+          <div class="section-head">
+            <h2>上传音频</h2>
+            <span class="section-tip">支持 mp3 / wav / m4a / mp4</span>
+          </div>
+
+          <div id="dropZone" class="upload-box drop-zone">
+            <div class="drop-zone-icon">☁️</div>
+            <div class="drop-zone-title">点击选择音频，或直接拖拽到这里</div>
+            <div class="drop-zone-subtitle">支持 mp3 / wav / m4a / mp4</div>
+
+            <input
+              type="file"
+              id="audioFile"
+              accept=".mp3,.wav,.m4a,.mp4"
+              class="file-input"
+            />
+
+            <div id="fileMeta" class="file-meta" style="display: none">
+              <div class="file-meta-label">已选文件</div>
+              <div id="fileName" class="file-meta-name"></div>
+              <div id="fileSize" class="file-meta-size"></div>
+            </div>
+
+            <button onclick="uploadAudio()" class="primary-btn">
+              上传并分析
+            </button>
+          </div>
+          <div class="upload-note">
+            <div class="upload-note-title">使用提示</div>
+            <p>
+              建议上传语音清晰、背景噪音较少的葡语音频，这样转写与翻译效果会更稳定。
+            </p>
+          </div>
+        </section>
+
+        <section id="result" class="panel-card result-card">
+          <div class="empty-state">
+            <div class="empty-icon">🎧</div>
+            <h3>等待分析结果</h3>
+            <p>上传一段葡语音频后，这里会显示转写结果与中文翻译。</p>
+            <div class="empty-hint">分析完成后还可以一键导出 Word 文件。</div>
+          </div>
+        </section>
+
+        <button id="exportBtn" class="export-btn" style="display: none">
+          导出 Word
+        </button>
+      </main>
     </div>
 
     <script src="/static/main.js"></script>
